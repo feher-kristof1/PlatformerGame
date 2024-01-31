@@ -1,0 +1,24 @@
+#menu{
+    width: 90%;
+    height: 95%;
+    border: 5px solid green;
+    position: absolute;
+    top: 25px;
+    left:90px;
+    background-color: rgba(0, 190, 0, 0.4);
+    z-index: 0;
+}
+
+#block{
+    width: 90%;
+    height: 95%;
+    position: absolute;
+    top: 25px;
+    left:90px;
+    border: 5px solid white;
+    z-index: 1;
+}
+
+body{
+    background-color: black;
+}
