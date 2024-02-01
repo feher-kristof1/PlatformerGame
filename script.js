@@ -4,22 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
   let player = document.querySelector(".player");
   let level; // kulonbozo szimbolumok jelzik hogy mi hol van
 
-  let menu = document.querySelector("#menu");
+  let jetekter = document.querySelector("#menu");
     let blockok = document.querySelector("#block");
 
-    let char = menu.getContext("2d");
+    let char = jetekter.getContext("2d");
     let kozga = blockok.getContext("2d")
 
     let x = 10;
     let y = 139;
-    let width = 6;
-    let height = 5;
+    let width = 4;
+    let height = 3;
+
     let velxj = 0;
     let velxb = 0;
     let vely=0;
+
     let speed = 1;
-    let jumpstrenght = 30;
-    let grav = 1;
+    let jumpstrenght = 25;
+
+    let grav = 0.5;
     let coll = false;
 
 
@@ -30,14 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.code == "ArrowLeft") velxb = -speed;
         if(e.code == "Space") {
             if(coll) {
-                for(let i=0;i<jumpstrenght;i+=1){
-                    y-=1
-
-                }
+                    for(let i=0;i<jumpstrenght;i+=1){
+                        y-=1
+                    }
             }
         }
     });
-    
+
     addEventListener("keyup", function (e) {
         if (e.code == "KeyD") velxj = 0;
         if (e.code == "KeyA") velxb = 0;
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function update(){
-        if(coll == false) grav=1;
+        if(coll == false) grav=0.65;
         x+=velxb;
         x+=velxj;
         y+=(vely+grav);
@@ -62,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             kozga.fillRect(bx,by,bwidth,bheight)
             kozga.fillStyle="red"
 
-            if(y+height>=by&&y+height<=by+bheight&&x+width>=bx&&x+width<=bx+bwidth+5||y+height<=by&&y+height<=by+bheight&&x>=bx&&x<=bx+bwidth+5) {
+            if(y+height>=by&&y+height<=by+bheight&&x+width>=bx&&x+width<=bx+bwidth+3||y+height<=by&&y+height<=by+bheight&&x>=bx&&x<=bx+bwidth+5) {
                 if(y<by&&y>by-bheight&&y+height>by-bheight){
                     y=by-height;
                     coll=true
@@ -74,16 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     y=by+bheight
                     coll=true
                 }
-                if(y<=by+bheight&&y+height>=by+bheight&&x+width>=bx){
-                    coll=true
+                if(y>by+bheight&&x>bx&&x<bx+bwidth){
                     y=(by+bheight)-1
+                    coll=true
                 }
             }
-            console.log(bx, x+2, menu.width/2)
         }
 
 
-        char.clearRect(0, 0, menu.width, menu.height);
+        char.clearRect(0, 0, jetekter.width, jetekter.height);
         char.fillRect(x,y,width,height);
 
         if(y+2>140) {
@@ -94,9 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(y<0) y=0;
 
         requestAnimationFrame(update);
-        console.log(y, "x",x)
         }
-
 
     update()
 });
