@@ -20,10 +20,40 @@ document.addEventListener("DOMContentLoaded", () => {
   let vely = 0;
 
   let speed = 1;
-  let jumpstrenght = 25;
+  let jumpstrenght = 45;
+
+  
 
   let grav = 0.5;
   let coll = false;
+
+  function delay(mennyi){
+    return new Promise(resolve => setTimeout(resolve,mennyi));
+  }
+
+  async function jump(){
+    for (let i = 0; i < jumpstrenght; i += 1) {
+
+      for (let j = 0; j < lvl1.length; j++) {
+        let block = lvl1[j];
+        let bx = block.x;
+        let by = block.y;
+        let bwidth = block.width;
+        let bheight = block.height;
+        if (
+          y <= by + bheight &&
+          y + height >= by + bheight &&
+          x + width >= bx &&
+          x <= bx + bwidth
+        ) {
+          coll = true;
+          y = by + bheight - 1;
+        }
+      }
+      await delay(5)
+      y -= 1;
+    }
+  }
 
   addEventListener("keydown", function (e) {
     if (e.code == "KeyD") velxj = +speed;
@@ -31,29 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.code == "ArrowRight") velxj = speed;
     if (e.code == "ArrowLeft") velxb = -speed;
     if (e.code == "Space") {
-      if (e.code == "Space") {
-        if (coll) {
-          for (let i = 0; i < jumpstrenght; i += 0.01) {
-            for (let j = 0; j < lvl1.length; j++) {
-              let block = lvl1[j];
-              let bx = block.x;
-              let by = block.y;
-              let bwidth = block.width;
-              let bheight = block.height;
-
-              if (
-                y <= by + bheight &&
-                y + height >= by + bheight &&
-                x + width >= bx &&
-                x <= bx + bwidth
-              ) {
-                coll = true;
-                y = by + bheight - 1;
-              }
-            }
-            y -= 0.01;
-          }
-        }
+      if (coll) {
+        jump();
       }
     }
   });
@@ -129,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (y < 0) y = 0;
 
     requestAnimationFrame(update);
-    console.log(x, y);
   }
 
   update();
