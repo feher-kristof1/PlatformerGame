@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let jatekter = document.querySelector("#menu");
   let blockok = document.querySelector("#block");
-  const img = document.querySelector("#kep");
+  const img3 = document.querySelector("#kep3");
+  const img4 = document.querySelector("#kep4");
 
   let char = jatekter.getContext("2d");
   let kozga = blockok.getContext("2d");
@@ -126,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     char.clearRect(0, 0, jatekter.width, jatekter.height);
-    char.drawImage(img, x, y);
+    char.drawImage(img4, x, y);
     //char.fillRect(x, y, width, height);
 
     if (y + 2 > 140) {
