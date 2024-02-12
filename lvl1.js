@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         jump();
       }
     }
+    sideCheck();
     console.log(x);
   });
 
