@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let jatekter = document.querySelector("#menu");
   let blockok = document.querySelector("#block");
+  const img3 = document.querySelector("#kep3");
+  const img4 = document.querySelector("#kep4");
 
   let char = jatekter.getContext("2d");
   let kozga = blockok.getContext("2d");
@@ -22,18 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let speed = 1;
   let jumpstrenght = 45;
 
-  
-
   let grav = 0.5;
   let coll = false;
 
-  function delay(mennyi){
-    return new Promise(resolve => setTimeout(resolve,mennyi));
+  function delay(mennyi) {
+    return new Promise((resolve) => setTimeout(resolve, mennyi));
   }
 
-  async function jump(){
+  async function jump() {
     for (let i = 0; i < jumpstrenght; i += 1) {
-
       for (let j = 0; j < lvl1.length; j++) {
         let block = lvl1[j];
         let bx = block.x;
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           y = by + bheight - 1;
         }
       }
-      await delay(5)
+      await delay(5);
       y -= 1;
     }
   }
@@ -128,7 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     char.clearRect(0, 0, jatekter.width, jatekter.height);
-    char.fillRect(x, y, width, height);
+    char.drawImage(img4, x, y);
+    //char.fillRect(x, y, width, height);
 
     if (y + 2 > 140) {
       y = 139;
