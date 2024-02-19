@@ -31,14 +31,44 @@ document.addEventListener("DOMContentLoaded", () => {
     return new Promise((resolve) => setTimeout(resolve, mennyi));
   }
 
+  function sideCheck() {
+    if (x < 0) x = 300;
+    if (x > 300) x = 0;
+  }
+
+  // async function jump() {
+  //   for (let i = 0; i < jumpstrenght; i += 1) {
+  //     for (let j = 0; j < lvl1.length; j++) {
+  //       let block = lvl1[j];
+  //       let bx = block.x;
+  //       let by = block.y;
+  //       let bwidth = block.width;
+  //       let bheight = block.height;
+  //       sideCheck();
+  //       if (
+  //         y <= by + bheight &&
+  //         y + height >= by + bheight &&
+  //         x + width >= bx &&
+  //         x <= bx + bwidth
+  //       ) {
+  //         coll = true;
+  //         y = by + bheight - 1;
+  //       }
+  //     }
+  //     await delay(5);
+  //     y -= 1;
+  //   }
+  // }
+
   async function jump() {
-    for (let i = 0; i < jumpstrenght; i += 1) {
+    for (let i = 0; i < jumpstrenght; i++) {
       for (let j = 0; j < lvl1.length; j++) {
         let block = lvl1[j];
         let bx = block.x;
         let by = block.y;
         let bwidth = block.width;
         let bheight = block.height;
+        sideCheck();
         if (
           y <= by + bheight &&
           y + height >= by + bheight &&
@@ -49,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
           y = by + bheight - 1;
         }
       }
-      await delay(5);
+      await delay(3);
       y -= 1;
     }
   }
@@ -64,6 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
         jump();
       }
     }
+    sideCheck();
+    console.log(x);
   });
 
   addEventListener("keyup", function (e) {
@@ -71,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.code == "KeyA") velxb = 0;
     if (e.code == "ArrowRight") velxj = 0;
     if (e.code == "ArrowLeft") velxb = 0;
+    sideCheck();
   });
 
   function update() {
