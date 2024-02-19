@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
           coll = true;
         }
       }
-      if (x + width > 285 && y < 10) {
+      if (x + width > 285 && y < 10 && hasKey) {
         document.querySelector("#cel").innerHTML = "Gratula, nyertél!";
         velxb = 0;
         velxj = 0;
