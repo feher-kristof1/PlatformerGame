@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let jatekter = document.querySelector("#menu");
   let blockok = document.querySelector("#block");
+  const kulcs = document.querySelector("#kulcs");
   const img3 = document.querySelector("#kep3");
   const img4 = document.querySelector("#kep4");
 
+  let key = jatekter.getContext("2d");
   let char = jatekter.getContext("2d");
   let kozga = blockok.getContext("2d");
 
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let grav = 0.5;
   let coll = false;
+  let hasKey = false;
 
   function delay(mennyi) {
     return new Promise((resolve) => setTimeout(resolve, mennyi));
@@ -35,30 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (x < 0) x = 300;
     if (x > 300) x = 0;
   }
-
-  // async function jump() {
-  //   for (let i = 0; i < jumpstrenght; i += 1) {
-  //     for (let j = 0; j < lvl1.length; j++) {
-  //       let block = lvl1[j];
-  //       let bx = block.x;
-  //       let by = block.y;
-  //       let bwidth = block.width;
-  //       let bheight = block.height;
-  //       sideCheck();
-  //       if (
-  //         y <= by + bheight &&
-  //         y + height >= by + bheight &&
-  //         x + width >= bx &&
-  //         x <= bx + bwidth
-  //       ) {
-  //         coll = true;
-  //         y = by + bheight - 1;
-  //       }
-  //     }
-  //     await delay(5);
-  //     y -= 1;
-  //   }
-  // }
 
   async function jump() {
     for (let i = 0; i < jumpstrenght; i++) {
@@ -95,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     sideCheck();
-    console.log(x);
+    console.log(x, y);
   });
 
   addEventListener("keyup", function (e) {
@@ -161,7 +140,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     char.clearRect(0, 0, jatekter.width, jatekter.height);
     char.drawImage(img4, x, y);
+    key.drawImage(kulcs, 215, 53);
+    // 261- 267, 100
     //char.fillRect(x, y, width, height);
+
+    if (x > 261 && y == 100 && x < 267 && y == 100) {
+      hasKey = true;
+      // key.fillRect(0, 0, jatekter.width, jatekter.height);
+      console.log(hasKey);
+    }
+
+    console.log(hasKey);
+
+    if (hasKey) {
+      // key.fillRect(215, 53, jatekter.width, jatekter.height);
+
+      // rá kéne jonni a kulcs torlesere
+
+
+
+      // a kodot kene majd szepiteni mert otvaar
+    }
 
     if (y + 2 > 140) {
       y = 139;
