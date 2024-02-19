@@ -36,8 +36,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (x > 300) x = 0;
   }
 
+  // async function jump() {
+  //   for (let i = 0; i < jumpstrenght; i += 1) {
+  //     for (let j = 0; j < lvl1.length; j++) {
+  //       let block = lvl1[j];
+  //       let bx = block.x;
+  //       let by = block.y;
+  //       let bwidth = block.width;
+  //       let bheight = block.height;
+  //       sideCheck();
+  //       if (
+  //         y <= by + bheight &&
+  //         y + height >= by + bheight &&
+  //         x + width >= bx &&
+  //         x <= bx + bwidth
+  //       ) {
+  //         coll = true;
+  //         y = by + bheight - 1;
+  //       }
+  //     }
+  //     await delay(5);
+  //     y -= 1;
+  //   }
+  // }
+
   async function jump() {
-    for (let i = 0; i < jumpstrenght; i += 1) {
+    for (let i = 0; i < jumpstrenght; i++) {
       for (let j = 0; j < lvl1.length; j++) {
         let block = lvl1[j];
         let bx = block.x;
@@ -55,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
           y = by + bheight - 1;
         }
       }
-      await delay(5);
+      await delay(3);
       y -= 1;
     }
   }
