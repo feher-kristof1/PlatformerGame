@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const img3 = document.querySelector("#kep3");
   const img4 = document.querySelector("#kep4");
 
-  let key = jatekter.getContext("2d");
+  let key = blockok.getContext("2d");
   let char = jatekter.getContext("2d");
   let kozga = blockok.getContext("2d");
 
@@ -141,10 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
     char.clearRect(0, 0, jatekter.width, jatekter.height);
     char.drawImage(img4, x, y);
     key.drawImage(kulcs, 215, 53);
+    //215 53
     // 261- 267, 100
     //char.fillRect(x, y, width, height);
 
-    if (x > 261 && y == 100 && x < 267 && y == 100) {
+    if (x > 260 && y == 100 && x < 270 && y == 100) {
       hasKey = true;
       // key.fillRect(0, 0, jatekter.width, jatekter.height);
       console.log(hasKey);
@@ -156,6 +157,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // key.fillRect(215, 53, jatekter.width, jatekter.height);
 
       // rá kéne jonni a kulcs torlesere
+      //key.clearRect(10, 10, jatekter.width, jatekter.height)
+
+      //clearrecttel lehet torolni, csak goofy 
+      // lehet hogy kulon canvas kene neki
+      // meg ha a palya rajzolast kulon fuggvenybe tennenk akkor lehet hogy tudnank parameterezni az updatet
+
+      // majd meg csinalok leveleket
+      // meg szepitem a kodot
+      // meg meg csiszolni kene az egeszet
 
 
 
