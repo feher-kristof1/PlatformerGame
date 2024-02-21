@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const img3 = document.querySelector("#kep3");
   const img4 = document.querySelector("#kep4");
 
-  let key = blockok.getContext("2d");
+  let key = jatekter.getContext("2d");
   let char = jatekter.getContext("2d");
   let kozga = blockok.getContext("2d");
 
@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function sideCheck() {
     if (x < 0) x = 300;
     if (x > 300) x = 0;
+  }
+
+  function levelCompleted(){
+    jatekter.style.display = "none";
+    blockok.style.display = "none"
+    document.querySelector("#cel").innerHTML = "Gratula kivitted a szintet";
   }
 
   async function jump() {
@@ -129,9 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
       if (x + width > 285 && y < 10 && hasKey) {
-        document.querySelector("#cel").innerHTML = "Gratula, nyertél!";
-        velxb = 0;
-        velxj = 0;
+        levelCompleted();
       }
       if (x + width < 285 && y < 10) {
         document.querySelector("#cel").innerHTML = "";
@@ -157,10 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // key.fillRect(215, 53, jatekter.width, jatekter.height);
 
       // rá kéne jonni a kulcs torlesere
-      //key.clearRect(10, 10, jatekter.width, jatekter.height)
+      key.clearRect(10, 10, jatekter.width, jatekter.height);
+      char.drawImage(img4, x, y);
 
-      //clearrecttel lehet torolni, csak goofy 
-      // lehet hogy kulon canvas kene neki
       // meg ha a palya rajzolast kulon fuggvenybe tennenk akkor lehet hogy tudnank parameterezni az updatet
 
       // majd meg csinalok leveleket
