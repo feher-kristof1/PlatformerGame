@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function levelCompleted(){
     jatekter.style.display = "none";
     blockok.style.display = "none"
-    document.querySelector("#cel").innerHTML = "Gratula kivitted a szintet";
+    document.querySelector('.level_done').style.display = "block";
   }
 
   async function jump() {
@@ -70,24 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   addEventListener("keydown", function (e) {
-    if (e.code == "KeyD") velxj = +speed;
-    if (e.code == "KeyA") velxb = -speed;
-    if (e.code == "ArrowRight") velxj = speed;
-    if (e.code == "ArrowLeft") velxb = -speed;
+    if (e.code == "KeyD" || e.code == "ArrowRight") velxj = +speed;
+    if (e.code == "KeyA" || e.code == "ArrowLeft") velxb = -speed;
     if (e.code == "Space") {
       if (coll) {
         jump();
       }
     }
     sideCheck();
-    console.log(x, y);
   });
 
   addEventListener("keyup", function (e) {
-    if (e.code == "KeyD") velxj = 0;
-    if (e.code == "KeyA") velxb = 0;
-    if (e.code == "ArrowRight") velxj = 0;
-    if (e.code == "ArrowLeft") velxb = 0;
+    if (e.code == "KeyD" || e.code == "ArrowRight") velxj = 0;
+    if (e.code == "KeyA" || e.code == "ArrowLeft") velxb = 0;
     sideCheck();
   });
 
