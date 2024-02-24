@@ -23,4 +23,14 @@ window.addEventListener("DOMContentLoaded", () => {
     let grav = 0.5;
     let coll = false;
     let hasKey = false;
+
+    addEventListener("keydown", function(e){
+        if(e.code == "KeyD" || e.code == "ArrowRight") velx = +speed;
+        if(e.code == "KeyA" || e.code == "Arrowleft") velx = -speed;
+    });
+
+    addEventListener("keyup", function(e){
+        if(e.code == "KeyD"|| e.code == "ArrowRight") velx = 0;
+        if(e.code == "KeyA" || e.code == "ArrowLeft") velx = 0;
+    });
 });
