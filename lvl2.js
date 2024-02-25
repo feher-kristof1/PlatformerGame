@@ -2,7 +2,6 @@ import { lvl2 } from "./blockok.js";
 import { delay } from "./funct.js";
 import { sideCheck } from "./funct.js";
 
-
 window.addEventListener("DOMContentLoaded", () => {
   let jatekter = document.querySelector(".menu");
   let blockok = document.querySelector(".block");
@@ -68,11 +67,25 @@ window.addEventListener("DOMContentLoaded", () => {
       y -= 1;
     }
   }
-  function levelCompleted(){
+  function levelCompleted() {
     jatekter.style.display = "none";
-    blockok.style.display = "none"
-    document.querySelector('.level_done').style.display = "block";
-}
+    blockok.style.display = "none";
+    document.querySelector(".level_done").style.display = "block";
+  }
+
+  function palyarajzol() {
+    for (let i = 0; i < lvl2.length; i++) {
+      let block = lvl2[i];
+      let bx = block.x;
+      let by = block.y;
+      let bwidth = block.width;
+      let bheight = block.height;
+
+      kozga.fillRect(bx, by, bwidth, bheight);
+      kozga.fillStyle = "red";
+    }
+  }
+  palyarajzol();
 
   // function DrawLevel(){
   //     for(let i = 0; i < lvl2.lenght; i++){
@@ -150,6 +163,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //     requestAnimationFrame(update);
   // }
   function update() {
+    console.log(x, y);
     grav = 0.65;
     x += velxb;
     x += velxj;
@@ -162,9 +176,6 @@ window.addEventListener("DOMContentLoaded", () => {
       let by = block.y;
       let bwidth = block.width;
       let bheight = block.height;
-
-      kozga.fillRect(bx, by, bwidth, bheight);
-      kozga.fillStyle = "red";
 
       if (
         (y + height >= by &&
@@ -179,7 +190,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (y < by && y > by - bheight && y + height > by - bheight) {
           y = by - height + 1;
           coll = true;
-          console.log(coll, "Coll");
         }
         if (y > by && y + height > by) {
           y = by + bheight;
@@ -193,7 +203,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (x + width > 285 && y < 10 && hasKey) {
         levelCompleted();
       }
-      if (x + width < 285 && y < 10) {
+      if (x + width > 285 && y < 10) {
         document.querySelector("#cel").innerHTML = "";
       }
     }
@@ -235,7 +245,6 @@ window.addEventListener("DOMContentLoaded", () => {
     if (y < 0) y = 0;
 
     requestAnimationFrame(update);
-    console.log(coll, "a");
     // if (!coll) coll = true;
   }
 

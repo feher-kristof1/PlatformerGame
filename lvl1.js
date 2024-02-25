@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       kozga.fillRect(bx, by, bwidth, bheight);
       kozga.fillStyle = "red";
-      console.log(kozga.fillStyle, "iuseghfpo");
     }
   }
   palyarajzol();
