@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (x > 300) x = 0;
   }
 
-  function levelCompleted(){
+  function levelCompleted() {
     jatekter.style.display = "none";
-    blockok.style.display = "none"
-    document.querySelector('.level_done').style.display = "block";
+    blockok.style.display = "none";
+    document.querySelector(".level_done").style.display = "block";
   }
 
   async function jump() {
@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let bwidth = block.width;
         let bheight = block.height;
         sideCheck();
+        console.log(sideCheck);
         if (
           y <= by + bheight &&
           y + height >= by + bheight &&
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function update() {
-    if (coll == false) grav = 0.65;
+    grav = 0.65;
     x += velxb;
     x += velxj;
     y += vely + grav;
@@ -116,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (y < by && y > by - bheight && y + height > by - bheight) {
           y = by - height;
           coll = true;
+          console.log(coll);
         }
         if (y < by - bheight) {
           coll = false;
@@ -165,8 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // meg szepitem a kodot
       // meg meg csiszolni kene az egeszet
 
-
-
       // a kodot kene majd szepiteni mert otvaar
     }
 
@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (y < 0) y = 0;
 
     requestAnimationFrame(update);
+    console.log(coll);
   }
 
   update();
