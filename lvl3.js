@@ -2,6 +2,7 @@ import { lvl3 } from "./blockok.js";
 import { lvl3trap } from "./blockok.js";
 import { delay } from "./funct.js";
 import { sideCheck } from "./funct.js";
+import { GameCompMusic } from "./funct.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#start").play();
@@ -181,8 +182,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     if (hasKey) {
       if (x >= 280 && y >= 139) {
-        document.querySelector("#gamecomp").play();
-        document.querySelector("#bgmusic").pause();
+        GameCompMusic();
         gameComp();
         x = 0;
       }
