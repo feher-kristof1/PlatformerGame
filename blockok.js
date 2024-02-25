@@ -112,9 +112,9 @@ const lvl2 = [
   },
   // itt van a kulcs
   {
-    x: 255,
-    y: 105,
-    width: 25,
+    x: 260,
+    y: 103,
+    width: 10,
     height: 3,
   },
   {
@@ -163,6 +163,48 @@ const lvl2 = [
     x: 50,
     y: 45,
     width: 50,
+    height: 3,
+  },
+  {
+    x: 0,
+    y: 35,
+    width: 30,
+    height: 3,
+  },
+  {
+    x: 40,
+    y: 25,
+    width: 25,
+    height: 3,
+  },
+  {
+    x: 90,
+    y: 20,
+    width: 25,
+    height: 3,
+  },
+  {
+    x: 140,
+    y: 15,
+    width: 20,
+    height: 3,
+  },
+  { 
+    x: 180,
+    y: 10,
+    width: 15,
+    height:3,
+  },
+  {
+    x: 210,
+    y: 7,
+    width: 5,
+    height: 3,
+  },
+  {
+    x: 230,
+    y: 5,
+    width: 80,
     height: 3,
   },
 ]

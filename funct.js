@@ -8,11 +8,12 @@ function sideCheck(x) {
   return x;
 }
 
+
 function levelCompleted() {
   jatekter.style.display = "none";
   blockok.style.display = "none";
   document.querySelector(".level_done").style.display = "block";
 }
 
-export { delay };
-export { sideCheck };
+export {delay};
+export {sideCheck};
