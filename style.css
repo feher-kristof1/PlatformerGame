@@ -1,4 +1,4 @@
-#menu {
+.menu {
   width: 90%;
   height: 95%;
   border: 5px solid green;
@@ -9,7 +9,7 @@
   z-index: 0;
 }
 
-#block {
+.block {
   width: 90%;
   height: 95%;
   position: absolute;

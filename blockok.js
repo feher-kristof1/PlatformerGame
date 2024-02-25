@@ -104,6 +104,18 @@ const lvl2 = [
     width: 100,
     height: 3,
   },
+  {
+    x: 100,
+    y: 20,
+    width: 50,
+    height: 30,
+  },
+  {
+    x: 150,
+    y: 30,
+    width: 100,
+    height: 200,
+  },
 ]
 //Fel kell majd tölteni a platformok adataival, az x,y a bal felső sarkukat jelöli, y lefelé nő, a téglalap teteje a 0
 export { lvl1 };

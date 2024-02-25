@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let player = document.querySelector(".player");
   let level; // kulonbozo szimbolumok jelzik hogy mi hol van
 
-  let jatekter = document.querySelector("#menu");
-  let blockok = document.querySelector("#block");
+  let jatekter = document.querySelector(".menu");
+  let blockok = document.querySelector(".block");
   const kulcs = document.querySelector("#kulcs");
   const img3 = document.querySelector("#kep3");
   const img4 = document.querySelector("#kep4");
