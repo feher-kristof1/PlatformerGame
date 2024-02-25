@@ -99,22 +99,71 @@ const lvl1 = [
 
 const lvl2 = [
   {
-    x: 0,
-    y: 20,
-    width: 100,
+    x: 100,
+    y: 130,
+    width: 50,
     height: 3,
   },
   {
-    x: 100,
-    y: 20,
+    x: 50,
+    y: 110,
     width: 50,
-    height: 30,
+    height: 3,
+  },
+  // itt van a kulcs
+  {
+    x: 255,
+    y: 105,
+    width: 25,
+    height: 3,
   },
   {
-    x: 150,
-    y: 30,
-    width: 100,
-    height: 200,
+    x: 20,
+    y: 90,
+    width: 35,
+    height: 3,
+  },
+  {
+    x: 80,
+    y: 75,
+    width: 200,
+    height: 3,
+  },
+  {
+    x: 260,
+    y: 65,
+    width: 10,
+    height: 3,
+  },
+  {
+    x: 240,
+    y: 55,
+    width: 10,
+    height: 3,
+  },
+  {
+    x: 260,
+    y: 45,
+    width: 10, 
+    height: 3,
+  },
+  { 
+    x: 180,
+    y: 40, 
+    width: 60,
+    height: 3,
+  },
+  {
+    x: 120,
+    y: 55,
+    width: 30,
+    height: 3,
+  },
+  {
+    x: 50,
+    y: 45,
+    width: 50,
+    height: 3,
   },
 ]
 //Fel kell majd tölteni a platformok adataival, az x,y a bal felső sarkukat jelöli, y lefelé nő, a téglalap teteje a 0

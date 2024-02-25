@@ -14,3 +14,5 @@ function levelCompleted(){
     document.querySelector('.level_done').style.display = "block";
 }
 
+export {delay};
+export {sideCheck};
