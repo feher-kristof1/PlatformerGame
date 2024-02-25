@@ -41,8 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
       let bwidth = block.width;
       let bheight = block.height;
 
-      kozga.fillRect(bx, by, bwidth, bheight);
       kozga.fillStyle = "red";
+      kozga.fillRect(bx, by, bwidth, bheight);
+
     }
   }
   palyarajzol();
