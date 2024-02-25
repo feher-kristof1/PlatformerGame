@@ -4,8 +4,8 @@ import { delay } from "./funct.js";
 import { sideCheck } from "./funct.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-
   document.querySelector("#start").play();
+  document.querySelector("#bgmusic").play();
 
   let jatekter = document.querySelector(".lvl3");
   let blockok = document.querySelector(".palya3");
@@ -182,6 +182,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (hasKey) {
       if (x >= 280 && y >= 139) {
         document.querySelector("#gamecomp").play();
+        document.querySelector("#bgmusic").pause();
         gameComp();
         x = 0;
       }

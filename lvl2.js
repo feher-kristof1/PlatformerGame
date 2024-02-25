@@ -3,6 +3,9 @@ import { delay } from "./funct.js";
 import { sideCheck } from "./funct.js";
 
 window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#start").play();
+  document.querySelector("#bgmusic").play();
+
   let jatekter = document.querySelector(".menu");
   let blockok = document.querySelector(".block");
   const key = document.querySelector("#key");
@@ -127,6 +130,8 @@ window.addEventListener("DOMContentLoaded", () => {
       }
       if (x + width > 285 && y < 10 && hasKey) {
         levelCompleted();
+        document.querySelector("#palyakesz").play();
+        document.querySelector("#bgmusic").pause();
       }
       if (x + width > 285 && y < 10) {
         document.querySelector("#cel").innerHTML = "";
@@ -139,6 +144,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (x > 260 && y == 100 && x < 270 && y == 100) {
       hasKey = true;
+      document.querySelector("#keyup").play();
       console.log(hasKey);
     }
 
