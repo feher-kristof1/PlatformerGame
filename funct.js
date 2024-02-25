@@ -13,3 +13,7 @@ function levelCompleted(){
     blockok.style.display = "none"
     document.querySelector('.level_done').style.display = "block";
 }
+
+function DrawLevel(szint, iksz, ipsz){
+    
+}
