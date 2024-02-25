@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let vely = 0;
 
   let speed = 1;
-  let jumpstrenght = 45;
+  let jumpstrenght = 55;
   let grav = 0.5;
   let coll = false;
   let hasKey = false;
@@ -92,7 +92,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function update() {
     console.log(x, y);
-    grav = 0.65;
+    grav = 1.25;
     x += velxb;
     x += velxj;
     y += vely + grav;
