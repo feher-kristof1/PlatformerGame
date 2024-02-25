@@ -78,6 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
     jatekter.style.display = "none";
     blockok.style.display = "none";
     traplayer.style.display = "none";
+    document.querySelector("#vege").style.display = "block";
   }
 
   function levelCompleted() {

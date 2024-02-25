@@ -132,6 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
         levelCompleted();
         document.querySelector("#palyakesz").play();
         document.querySelector("#bgmusic").pause();
+        document.querySelector("#exit2").style.display = "none";
       }
       if (x + width > 285 && y < 10) {
         document.querySelector("#cel").innerHTML = "";

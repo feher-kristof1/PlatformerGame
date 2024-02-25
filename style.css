@@ -9,6 +9,44 @@
   z-index: 0;
 }
 
+#exit {
+  z-index: 1;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 38px;
+  right: 133px;
+}
+
+#exit2 {
+  z-index: 1;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 30px;
+  right: 133px;
+}
+
+#vege {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1835px;
+  height: 900px;
+  z-index: 0;
+}
+
+.vege {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1850px;
+  height: 900px;
+  z-index: 1;
+}
+
 .block {
   width: 90%;
   height: 95%;
@@ -16,7 +54,7 @@
   top: 25px;
   left: 90px;
   border: 5px solid white;
-  z-index: 1;
+  z-index: 2;
 }
 
 body {
@@ -122,12 +160,11 @@ body {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-
 .level_done:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.assets{
+.assets {
   display: none;
 }
 
@@ -163,4 +200,9 @@ body {
   margin-left: 55px;
   position: absolute;
   top: 0;
+}
+
+#menumusic {
+  margin-left: 780px;
+  margin-top: 450px;
 }

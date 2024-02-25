@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         levelCompleted();
         document.querySelector("#palyakesz").play();
         document.querySelector("#bgmusic").pause();
+        document.querySelector("#exit").style.display = "none";
         x = 0;
       }
       if (x + width < 285 && y < 10) {
