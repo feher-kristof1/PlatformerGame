@@ -2,6 +2,7 @@ import { lvl2 } from "./blockok.js";
 import { delay } from "./funct.js";
 import { sideCheck } from "./funct.js";
 
+
 window.addEventListener("DOMContentLoaded", () => {
   let jatekter = document.querySelector(".menu");
   let blockok = document.querySelector(".block");
@@ -67,6 +68,11 @@ window.addEventListener("DOMContentLoaded", () => {
       y -= 1;
     }
   }
+  function levelCompleted(){
+    jatekter.style.display = "none";
+    blockok.style.display = "none"
+    document.querySelector('.level_done').style.display = "block";
+}
 
   // function DrawLevel(){
   //     for(let i = 0; i < lvl2.lenght; i++){
@@ -184,12 +190,12 @@ window.addEventListener("DOMContentLoaded", () => {
           coll = true;
         }
       }
-      //   if (x + width > 285 && y < 10 && hasKey) {
-      //     levelCompleted();
-      //   }
-      //   if (x + width < 285 && y < 10) {
-      //     document.querySelector("#cel").innerHTML = "";
-      //   }
+      if (x + width > 285 && y < 10 && hasKey) {
+        levelCompleted();
+      }
+      if (x + width < 285 && y < 10) {
+        document.querySelector("#cel").innerHTML = "";
+      }
     }
 
     char.clearRect(0, 0, jatekter.width, jatekter.height);
@@ -210,7 +216,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       // rá kéne jonni a kulcs torlesere
       kulcs.clearRect(10, 10, jatekter.width, jatekter.height);
-      char.drawImage(img4, x, y);
+      char.drawImage(karakter, x, y);
 
       // meg ha a palya rajzolast kulon fuggvenybe tennenk akkor lehet hogy tudnank parameterezni az updatet
 
@@ -230,7 +236,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(update);
     console.log(coll, "a");
-    if (!coll) coll = true;
+    // if (!coll) coll = true;
   }
 
   update();
