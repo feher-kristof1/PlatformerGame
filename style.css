@@ -70,6 +70,9 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 50px;
   padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .visszanyil:hover {
@@ -87,39 +90,72 @@ body {
   box-shadow: none;
 }
 
-.main_menu{
+.main_menu {
   width: 100px;
   margin: auto;
   margin-top: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 15px;
-  
+
   text-align: center;
-} 
-.next_level{
+}
+.next_level {
   width: 100px;
   margin: auto;
   margin-top: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 15px;
-  
+
   text-align: center;
 }
 
-.main_menu a, .next_level a{
+.main_menu a,
+.next_level a {
   text-decoration: none;
   font-size: 20px;
   color: black;
 }
 
-
-.main_menu:hover{
+.main_menu:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 
-} 
-
-.level_done:hover{
+.level_done:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.lvl3 {
+  width: 1750px;
+  height: 900px;
+  background-color: rgba(255, 136, 0, 0.25);
+  z-index: 0;
+  margin-left: 55px;
+  position: absolute;
+  top: 0;
+}
+
+.palya3 {
+  width: 1750px;
+  height: 900px;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 2;
+  margin-left: 55px;
+  position: absolute;
+  top: 0;
+}
+
+.kep {
+  display: none;
+}
+
+.trap {
+  width: 1750px;
+  height: 900px;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  margin-left: 55px;
+  position: absolute;
+  top: 0;
 }

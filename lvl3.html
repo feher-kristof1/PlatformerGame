@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,23 @@
     <script type="module" src="lvl3.js"></script>
     <title>Platformer</title>
 </head>
+
 <body>
-    <canvas class="menu"></canvas>
-    <canvas class="block"></canvas>
+    <canvas class="lvl3"></canvas>
+    <canvas class="palya3"></canvas>
+    <canvas class="trap"></canvas>
     <a href="index.html" class="visszanyil">&#10094;</a>
     <div class="level_done">
         <h1>Gratulálok, teljesítette a szintet!</h1>
         <div class="main_menu"><a href="index.html">Vissza a főoldalra</a></div>
     </div>
 
-    <img src="karakter4.png" alt="" id="charImg">
-    <img src="kulcs.png" alt="" id="key">
+    <img src="karakter4.png" alt="" id="charImg" class="kep">
+    <img src="kulcs.png" alt="" id="key" class="kep">
+    <audio src="hangok/taco-bell-bong-sfx.mp3" id="death"></audio>
+    <audio src="hangok/bad-to-the-bone-meme.mp3" id="keyup"></audio>
+    <audio src="hangok/yippee-tbh.mp3" id="gamecomp"></audio>
+    <audio src="hangok/counter-strike-jingle-cs-radio-ok-lets-go.mp3" id="start"></audio>
 </body>
+
 </html>
