@@ -1,4 +1,4 @@
-import { lvl2 } from "./blockok.js";
+import { lvl3 } from "./blockok.js";
 import { delay } from "./funct.js";
 import { sideCheck } from "./funct.js";
 
@@ -74,8 +74,8 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function palyarajzol() {
-    for (let i = 0; i < lvl2.length; i++) {
-      let block = lvl2[i];
+    for (let i = 0; i < lvl3.length; i++) {
+      let block = lvl3[i];
       let bx = block.x;
       let by = block.y;
       let bwidth = block.width;

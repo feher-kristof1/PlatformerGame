@@ -1,9 +1,8 @@
 import { lvl1 } from "./blockok.js";
+import { delay } from "./funct.js";
+import { sideCheck } from "./funct.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  let player = document.querySelector(".player");
-  let level; // kulonbozo szimbolumok jelzik hogy mi hol van
-
   let jatekter = document.querySelector(".menu");
   let blockok = document.querySelector(".block");
   const kulcs = document.querySelector("#kulcs");
@@ -44,14 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   palyarajzol();
 
-  function delay(mennyi) {
-    return new Promise((resolve) => setTimeout(resolve, mennyi));
-  }
+  // function delay(mennyi) {
+  //   return new Promise((resolve) => setTimeout(resolve, mennyi));
+  // }
 
-  function sideCheck() {
-    if (x < 0) x = 295;
-    if (x > 295) x = 0;
-  }
+  // function sideCheck() {
+  //   if (x < 0) x = 295;
+  //   if (x > 295) x = 0;
+  // }
 
   function levelCompleted() {
     jatekter.style.display = "none";
@@ -67,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let by = block.y;
         let bwidth = block.width;
         let bheight = block.height;
-        sideCheck();
+        x = sideCheck(x);
         if (
           y <= by + bheight &&
           y + height >= by + bheight &&
@@ -91,13 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
         jump();
       }
     }
-    sideCheck();
+    x = sideCheck(x);
   });
 
   addEventListener("keyup", function (e) {
     if (e.code == "KeyD" || e.code == "ArrowRight") velxj = 0;
     if (e.code == "KeyA" || e.code == "ArrowLeft") velxb = 0;
-    sideCheck();
+    x = sideCheck(x);
   });
 
   function update() {
@@ -151,32 +150,17 @@ document.addEventListener("DOMContentLoaded", () => {
     char.clearRect(0, 0, jatekter.width, jatekter.height);
     char.drawImage(img4, x, y);
     key.drawImage(kulcs, 215, 53);
-    //215 53
-    // 261- 267, 100
-    //char.fillRect(x, y, width, height);
 
     if (x > 260 && y == 100 && x < 270 && y == 100) {
       hasKey = true;
-      // key.fillRect(0, 0, jatekter.width, jatekter.height);
       console.log(hasKey);
     }
 
     console.log(hasKey);
 
     if (hasKey) {
-      // key.fillRect(215, 53, jatekter.width, jatekter.height);
-
-      // rá kéne jonni a kulcs torlesere
       key.clearRect(10, 10, jatekter.width, jatekter.height);
       char.drawImage(img4, x, y);
-
-      // meg ha a palya rajzolast kulon fuggvenybe tennenk akkor lehet hogy tudnank parameterezni az updatet
-
-      // majd meg csinalok leveleket
-      // meg szepitem a kodot
-      // meg meg csiszolni kene az egeszet
-
-      // a kodot kene majd szepiteni mert otvaar
     }
 
     if (y + 2 > 140) {

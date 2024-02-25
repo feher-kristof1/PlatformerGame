@@ -208,6 +208,10 @@ const lvl2 = [
     height: 3,
   },
 ]
+
+const lvl3 = [
+  
+]
 //Fel kell majd tölteni a platformok adataival, az x,y a bal felső sarkukat jelöli, y lefelé nő, a téglalap teteje a 0
 export { lvl1 };
 export { lvl2 }
