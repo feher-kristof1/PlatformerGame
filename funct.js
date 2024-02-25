@@ -8,12 +8,17 @@ function sideCheck(x) {
   return x;
 }
 
+function LvlDone(){
+  document.querySelector("#palyakesz").play();
+  document.querySelector("#bgmusic").pause();
+}
 
-function levelCompleted() {
-  jatekter.style.display = "none";
-  blockok.style.display = "none";
-  document.querySelector(".level_done").style.display = "block";
+function GameCompMusic(){
+  document.querySelector("#gamecomp").play();
+  document.querySelector("#bgmusic").pause();
 }
 
 export {delay};
 export {sideCheck};
+export { LvlDone };
+export {GameCompMusic};

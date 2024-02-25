@@ -1,6 +1,7 @@
 import { lvl2 } from "./blockok.js";
 import { delay } from "./funct.js";
 import { sideCheck } from "./funct.js";
+import { LvlDone } from "./funct.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#start").play();
@@ -130,6 +131,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
       if (x + width > 285 && y < 10 && hasKey) {
         levelCompleted();
+        LvlDone();
         document.querySelector("#palyakesz").play();
         document.querySelector("#bgmusic").pause();
         document.querySelector("#exit2").style.display = "none";
