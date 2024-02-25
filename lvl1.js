@@ -30,13 +30,28 @@ document.addEventListener("DOMContentLoaded", () => {
   let coll = false;
   let hasKey = false;
 
+  function palyarajzol() {
+    for (let i = 0; i < lvl1.length; i++) {
+      let block = lvl1[i];
+      let bx = block.x;
+      let by = block.y;
+      let bwidth = block.width;
+      let bheight = block.height;
+
+      kozga.fillRect(bx, by, bwidth, bheight);
+      kozga.fillStyle = "red";
+      console.log(kozga.fillStyle, "iuseghfpo");
+    }
+  }
+  palyarajzol();
+
   function delay(mennyi) {
     return new Promise((resolve) => setTimeout(resolve, mennyi));
   }
 
   function sideCheck() {
-    if (x < 0) x = 300;
-    if (x > 300) x = 0;
+    if (x < 0) x = 295;
+    if (x > 295) x = 0;
   }
 
   function levelCompleted() {
@@ -54,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let bwidth = block.width;
         let bheight = block.height;
         sideCheck();
-        console.log(sideCheck);
         if (
           y <= by + bheight &&
           y + height >= by + bheight &&
@@ -92,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     x += velxb;
     x += velxj;
     y += vely + grav;
-    coll = false;
 
     for (let i = 0; i < lvl1.length; i++) {
       let block = lvl1[i];
@@ -100,9 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let by = block.y;
       let bwidth = block.width;
       let bheight = block.height;
-
-      kozga.fillRect(bx, by, bwidth, bheight);
-      kozga.fillStyle = "red";
 
       if (
         (y + height >= by &&
@@ -117,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (y < by && y > by - bheight && y + height > by - bheight) {
           y = by - height;
           coll = true;
-          console.log(coll);
         }
         if (y < by - bheight) {
           coll = false;
@@ -131,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
           coll = true;
         }
       }
+
       if (x + width > 285 && y < 10 && hasKey) {
         levelCompleted();
       }
@@ -178,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (y < 0) y = 0;
 
     requestAnimationFrame(update);
-    console.log(coll);
+    console.log(coll, "ed");
   }
 
   update();
