@@ -49,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   async function jump() {
+    let felsocoll=false;
     for (let i = 0; i < jumpstrenght; i++) {
       for (let j = 0; j < lvl2.length; j++) {
         let block = lvl2[j];
@@ -63,12 +64,12 @@ window.addEventListener("DOMContentLoaded", () => {
           x + width >= bx &&
           x <= bx + bwidth
         ) {
-          coll = true;
+          felsocoll = true;
           y = by + bheight - 1;
         }
       }
       await delay(3);
-      y -= 1;
+      if(!felsocoll) y -= 1;
     }
   }
   function levelCompleted() {
@@ -93,7 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function update() {
     console.log(x, y);
-    grav = 1.25;
+    grav = 1.5;
     x += velxb;
     x += velxj;
     y += vely + grav;

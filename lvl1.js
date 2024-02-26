@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function jump() {
+    let felsocoll=false;
     for (let i = 0; i < jumpstrenght; i++) {
       for (let j = 0; j < lvl1.length; j++) {
         let block = lvl1[j];
@@ -78,12 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
           x + width >= bx &&
           x <= bx + bwidth
         ) {
-          coll = true;
+          felsocoll=true;
           y = by + bheight - 1;
         }
       }
       await delay(3);
-      y -= 1;
+      if(!felsocoll) y -= 1;
     }
   }
 
@@ -105,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function update() {
+    coll=false;
     grav = 1.25;
     x += velxb;
     x += velxj;
@@ -164,8 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#keyup").play();
       console.log(hasKey);
     }
-
-    console.log(hasKey);
+;
 
     if (hasKey) {
       key.clearRect(10, 10, jatekter.width, jatekter.height);
@@ -180,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (y < 0) y = 0;
 
     requestAnimationFrame(update);
-    console.log(coll, "ed");
+    console.log(coll)
   }
 
   update();
